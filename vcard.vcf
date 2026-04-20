@@ -1,10 +1,9 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Bernal;Juan;;;
-FN:Juan Bernal
-ORG:Fantastic Floors
-TITLE:Owner
-TEL;TYPE=CELL:+19139539941
-EMAIL;TYPE=WORK:juan@fantasticfloorskc.com
-URL:https://www.fantasticfloorsks.com
+FN:
+N:;;;;
+ORG:
+TITLE:
+TEL;TYPE=CELL:
+EMAIL:juan@fantasticfloorskc.com
 END:VCARD

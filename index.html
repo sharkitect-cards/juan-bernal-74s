@@ -364,9 +364,6 @@
 
     <script>
         function saveContact() {
-            const _url = 'https://www.fantasticfloorsks.com';
-            const _note = '';
-            const _photo = '';
             const vcard = [
                 'BEGIN:VCARD',
                 'VERSION:3.0',
@@ -376,11 +373,11 @@
                 'TITLE:Owner',
                 'TEL;TYPE=CELL:(913) 953-9941',
                 'EMAIL;TYPE=WORK:juan@fantasticfloorskc.com',
-                _url ? ('URL:' + _url) : null,
-                _note ? ('NOTE:' + _note) : null,
-                _photo || null,
+                'URL:https://www.fantasticfloorsks.com',
+                'NOTE:',
+                '',
                 'END:VCARD'
-            ].filter(Boolean).join('\r\n');
+            ].join('\r\n');
 
             const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
             const url = URL.createObjectURL(blob);

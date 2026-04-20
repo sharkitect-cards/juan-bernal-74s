@@ -364,6 +364,16 @@
 
     <script>
         function saveContact() {
+            const _officePhone = `(913) 399-5437`;
+            const _officeAddr = `1370 N Winchester St, Olathe, KS, 66061`;
+            const _tagline = `We're All You Need`;
+            const _bio = `Olathe's Preferred Family-Owned Flooring and Remodeling Partner Since 2017`;
+            const _ap = _officeAddr ? _officeAddr.split(',').map(s => s.trim()) : [];
+            const _adrLine = _officeAddr
+                ? `ADR;TYPE=WORK:;;${_ap[0] || ''};${_ap[1] || ''};${_ap[2] || ''};${_ap[3] || ''};USA`
+                : '';
+            const _noteStr = [_tagline, _bio].filter(Boolean).join(' | ');
+
             const vcard = [
                 'BEGIN:VCARD',
                 'VERSION:3.0',
@@ -372,9 +382,11 @@
                 'ORG:Fantastic Floors',
                 'TITLE:Owner',
                 'TEL;TYPE=CELL:(913) 953-9941',
+                _officePhone ? `TEL;TYPE=WORK:${_officePhone}` : '',
                 'EMAIL;TYPE=WORK:juan@fantasticfloorskc.com',
                 'URL:https://www.fantasticfloorsks.com',
-                'NOTE:',
+                _adrLine,
+                _noteStr ? `NOTE:${_noteStr}` : '',
                 '',
                 'END:VCARD'
             ].filter(Boolean).join('\r\n');

@@ -1,0 +1,3 @@
+# vCard 3.0 mandates CRLF. Without this, git normalizes .vcf to LF on commit
+# and some phones reject the file. Do not remove.
+*.vcf -text
